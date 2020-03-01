@@ -45,6 +45,15 @@ export const QuestionnaireContainer = () => {
           title
         }
       },
+      optimisticResponse: () => {
+        return {
+          updateQuestionnaire: {
+            id,
+            success: true,
+            __typename: "UpdateQuestionnairePayload"
+          }
+        };
+      },
       update: proxy => {
         const current = proxy.readFragment<QuestionnaireFragment>({
           id: `Questinnaire:${id}`,
