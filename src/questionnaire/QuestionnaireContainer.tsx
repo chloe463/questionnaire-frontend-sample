@@ -55,12 +55,13 @@ export const QuestionnaireContainer = () => {
         };
       },
       update: proxy => {
+        const cacheId = `Questinnaire:${id}`;
         const current = proxy.readFragment<QuestionnaireFragment>({
-          id: `Questinnaire:${id}`,
+          id: cacheId,
           fragment: QUESTIONNAIRE_FRAGMENT
         });
         proxy.writeFragment({
-          id: `Questionnaire:${id}`,
+          id: cacheId,
           fragment: QUESTIONNAIRE_FRAGMENT,
           data: {
             ...current,
