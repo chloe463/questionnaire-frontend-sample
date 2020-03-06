@@ -55,7 +55,7 @@ export const QuestionnaireContainer = () => {
         };
       },
       update: proxy => {
-        const cacheId = `Questinnaire:${id}`;
+        const cacheId = `Questionnaire:${id}`;
         const current = proxy.readFragment<QuestionnaireFragment>({
           id: cacheId,
           fragment: QUESTIONNAIRE_FRAGMENT
